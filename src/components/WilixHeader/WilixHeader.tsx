@@ -1,8 +1,9 @@
 import React from 'react';
+import './WilixHeader.css';
 
 const WilixHeader: React.FC = () => {
   return (
-    <h1 className="text-center">
+    <h1 className="text-center disable_select">
       W
       <span className="accent_letter">i</span>
       l
