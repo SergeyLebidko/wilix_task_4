@@ -1,23 +1,17 @@
-import React, {useEffect, useRef, useState} from 'react';
+import React, {useRef, useState} from 'react';
 import Form from 'react-bootstrap/Form';
 import Container from 'react-bootstrap/Container';
 import Stack from 'react-bootstrap/Stack';
 import Button from 'react-bootstrap/Button';
 import WilixHeader from '../WilixHeader/WilixHeader';
-import {useDispatch, useSelector} from 'react-redux';
+import {useDispatch} from 'react-redux';
 import {parseQuery} from '../../store';
 import './App.css';
 
 const App: React.FC = () => {
   const dispatch = useDispatch<any>();
-  const state = useSelector((state) => state);
   const [hasButton, setHasButton] = useState<boolean>(false);
   const inputRef = useRef<HTMLInputElement>(null);
-
-  // Тестовый вывод
-  useEffect(() => {
-    console.log(state);
-  }, [state]);
 
   const searchTextChangeHandler = (event: React.ChangeEvent): void => {
     setHasButton(!!(event.target as HTMLInputElement).value);

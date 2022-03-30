@@ -8,7 +8,9 @@ type SetResultAction = {
   payload: QueryParseResult
 }
 
-function reducer(state: null | QueryParseResult = null, action: SetResultAction): null | QueryParseResult {
+export type RootState = null | QueryParseResult;
+
+function reducer(state: RootState = null, action: SetResultAction): RootState {
   switch (action.type) {
     case 'set_result_action': {
       return action.payload;
