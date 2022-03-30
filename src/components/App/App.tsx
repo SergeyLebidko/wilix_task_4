@@ -3,6 +3,7 @@ import Form from 'react-bootstrap/Form';
 import Container from 'react-bootstrap/Container';
 import Stack from 'react-bootstrap/Stack';
 import Button from 'react-bootstrap/Button';
+import WilixHeader from '../WilixHeader/WilixHeader';
 import './App.css';
 
 const App: React.FC = () => {
@@ -11,7 +12,7 @@ const App: React.FC = () => {
   return (
     <Container>
       <Stack gap={2}>
-        <h1 className="text-center">Wilix Search</h1>
+        <WilixHeader/>
         <Stack gap={2} direction="horizontal">
           <Form.Control type="text" placeholder="Введите запрос"/>
           <Button variant="primary" onClick={clickHandler}>Найти</Button>
