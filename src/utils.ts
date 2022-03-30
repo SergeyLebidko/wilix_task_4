@@ -1,4 +1,4 @@
-enum ResultType {
+export enum ResultType {
   Error,
   Post,
   Phone,

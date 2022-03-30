@@ -1,6 +1,7 @@
 import {applyMiddleware, createStore, Dispatch} from 'redux';
 import thunk from 'redux-thunk';
 import {queryParser, QueryParseResult} from './utils';
+import {composeWithDevTools} from 'redux-devtools-extension';
 
 type SetResultAction = {
   type: 'set_result_action',
@@ -18,14 +19,16 @@ function reducer(state: null | QueryParseResult = null, action: SetResultAction)
   }
 }
 
-export const parseQuery = (query: string) => async (dispatch: Dispatch<SetResultAction>) => {
-  const parsedQuery = await queryParser(query);
-  dispatch({
-    type: 'set_result_action',
-    payload: parsedQuery,
-  });
-};
+export function parseQuery(query: string) {
+  return async (dispatch: Dispatch) => {
+    const parseResult = await queryParser(query);
+    dispatch({
+      type: 'set_result_action',
+      payload: parseResult,
+    });
+  };
+}
 
-const store = createStore(reducer, null, applyMiddleware(thunk));
+const store = createStore(reducer, null, composeWithDevTools(applyMiddleware(thunk)));
 
 export default store;
