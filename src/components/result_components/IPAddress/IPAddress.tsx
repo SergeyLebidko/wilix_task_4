@@ -5,7 +5,7 @@ import '../../../style/common.css';
 const IPAddress: React.FC = () => {
   return (
     <Container className="content">
-      Результаты для поиска ip-фдреса
+      Результаты для поиска ip-адреса
     </Container>
   );
 };
