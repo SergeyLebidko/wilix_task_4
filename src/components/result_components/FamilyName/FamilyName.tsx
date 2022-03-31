@@ -1,8 +1,12 @@
 import React from 'react';
+import Container from 'react-bootstrap/Container';
+import '../../../style/common.css';
 
 const FamilyName: React.FC = () => {
   return (
-    <div>Результаты для поиска имени и фамилии</div>
+    <Container className="content">
+      Результаты для поиска имени и фамилии
+    </Container>
   );
 };
 

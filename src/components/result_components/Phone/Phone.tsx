@@ -1,8 +1,12 @@
 import React from 'react';
+import Container from 'react-bootstrap/Container';
+import '../../../style/common.css';
 
 const Phone: React.FC = () => {
   return (
-    <div>Результаты для поиска телефона</div>
+    <Container className="content">
+      Результаты для поиска телефона
+    </Container>
   );
 };
 

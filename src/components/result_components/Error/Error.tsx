@@ -1,8 +1,12 @@
 import React from 'react';
+import Container from 'react-bootstrap/Container';
+import '../../../style/common.css';
 
 const Error: React.FC = () => {
   return (
-    <div>Страница с сообщением об ошибке парсинга</div>
+    <Container className="content">
+      Страница с сообщением об ошибке парсинга
+    </Container>
   );
 };
 
