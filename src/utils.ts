@@ -7,53 +7,40 @@ export enum ResultType {
   IPAddress
 }
 
-export type QueryParseResult = {
+export type ParseResult = {
   type: ResultType,
   rawQuery: string,
   normalizeQuery: string | null
 }
 
-export async function queryParser(query: string): Promise<QueryParseResult> {
-  // Код-заглушка, возвращающий фиктивные результаты
-  if (query === 'post') {
-    return {
-      type: ResultType.Post,
-      rawQuery: query,
-      normalizeQuery: query,
-    };
-  }
-  if (query === 'phone') {
-    return {
-      type: ResultType.Phone,
-      rawQuery: query,
-      normalizeQuery: query,
-    };
-  }
-  if (query === 'nickname') {
-    return {
-      type: ResultType.NickName,
-      rawQuery: query,
-      normalizeQuery: query,
-    };
-  }
-  if (query === 'familyname') {
-    return {
-      type: ResultType.FamilyName,
-      rawQuery: query,
-      normalizeQuery: query,
-    };
-  }
-  if (query === 'ipaddress') {
-    return {
-      type: ResultType.IPAddress,
-      rawQuery: query,
-      normalizeQuery: query,
-    };
-  }
+// Эта функция имитирует бэкенд, на который уходит поисковой запрос
+export function backend(query: string): Promise<ParseResult> {
+  return new Promise<ParseResult>((resolve) => {
+    // Имитируем сетевую задержку
+    setTimeout(() => {
+      // Временный код-заглушка, возвращающий фиктивные результаты
+      const result = {
+        type: ResultType.Error,
+        rawQuery: query,
+        normalizeQuery: null,
+      };
+      if (query === 'post') {
+        result.type = ResultType.Post;
+      }
+      if (query === 'phone') {
+        result.type = ResultType.Phone;
+      }
+      if (query === 'nickname') {
+        result.type = ResultType.NickName;
+      }
+      if (query === 'familyname') {
+        result.type = ResultType.FamilyName;
+      }
+      if (query === 'ipaddress') {
+        result.type = ResultType.IPAddress;
+      }
 
-  return {
-    type: ResultType.Error,
-    rawQuery: query,
-    normalizeQuery: null,
-  };
+      resolve(result);
+    }, 1000);
+  });
 }

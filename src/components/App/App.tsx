@@ -5,8 +5,8 @@ import Stack from 'react-bootstrap/Stack';
 import Button from 'react-bootstrap/Button';
 import WilixHeader from '../WilixHeader/WilixHeader';
 import {useDispatch} from 'react-redux';
-import {parseQuery} from '../../store';
 import './App.css';
+import {resultAction} from '../../store/actionCreators';
 
 const App: React.FC = () => {
   const dispatch = useDispatch<any>();
@@ -19,7 +19,7 @@ const App: React.FC = () => {
 
   const clickHandler = (): void => {
     if (!hasButton || inputRef.current === null) return;
-    dispatch(parseQuery(inputRef.current.value));
+    dispatch(resultAction(inputRef.current.value));
   };
 
   return (
