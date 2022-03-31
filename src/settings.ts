@@ -13,5 +13,5 @@ export const PATH_SELECTOR: any = {
   [ResultType.Phone]: PHONE_URL,
   [ResultType.Nick]: NICK_URL,
   [ResultType.FamilyName]: FAMILY_NAME_URL,
-  [ResultType.IPAddress]: IP_ADDRESS_URL
+  [ResultType.IPAddress]: IP_ADDRESS_URL,
 };

@@ -54,8 +54,9 @@ const SearchControl: React.FC = () => {
             onKeyDown={keyDownHandler}
             ref={inputRef}
             placeholder="Введите запрос"
+            disabled={preloader}
           />
-          <Button variant="primary" disabled={!parsEnabled} onClick={clickHandler}>
+          <Button variant="primary" disabled={!parsEnabled || preloader} onClick={clickHandler}>
             Найти
           </Button>
         </Stack>
