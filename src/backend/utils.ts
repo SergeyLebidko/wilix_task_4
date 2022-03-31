@@ -1,4 +1,4 @@
-import {BACKEND_TIMEOUT} from '../settings';
+import {BACKEND_TIMEOUT, FN_RX, NICK_RX} from '../settings';
 import {ParseResult, ResultType} from './types';
 import validator from 'validator';
 
@@ -29,8 +29,8 @@ export function backend(query: string): Promise<ParseResult> {
       }
 
       // Проверяем на ник (юзернэйм)
-      // Предполагаем, что пользователь ввел строку из букв и/или цифр, которая может также начинаться с символа @
-      if (validator.isAlphanumeric(query) || (query[0] === '@' && validator.isAlphanumeric(query.slice(1)))) {
+      // Предполагаем, что пользователь ввел строку из букв и/или цифр, которая может также содержать символ @
+      if (NICK_RX.test(query)) {
         resolve({
           type: ResultType.Nick,
           query,
@@ -39,9 +39,9 @@ export function backend(query: string): Promise<ParseResult> {
       }
 
       // Проверяем на имя и фамилию
-      // Предполагаем, что пользователь ввел два слова, состоящих только из букв
+      // Предполагаем, что пользователь ввел два слова, состоящие только из букв
       const _query = query.split(/\s+/);
-      if (_query.length === 2 && validator.isAlpha(_query[0]) && validator.isAlpha(_query[1])) {
+      if (_query.length === 2 && FN_RX.test(_query[0]) && FN_RX.test(_query[1])) {
         resolve({
           type: ResultType.FamilyName,
           query: _query.join(' '),

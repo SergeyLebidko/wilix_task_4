@@ -18,3 +18,9 @@ export const PATH_SELECTOR: any = {
 
 // Задержка бэкенда
 export const BACKEND_TIMEOUT = 1500;
+
+// Регулярное выражение для проверки ника
+export const NICK_RX = /^[@а-яА-Яa-zA-Z0-9_]+$/;
+
+// Регулярное выражение для проверки имени и фамилии
+export const FN_RX = /^[а-яА-Яa-zA-Z]+$/;
