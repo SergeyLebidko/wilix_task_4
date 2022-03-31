@@ -9,7 +9,6 @@ import {useDispatch, useSelector} from 'react-redux';
 import {resultAction} from '../../store/actionCreators';
 import {preloaderSelector} from '../../store/selectors';
 import {Spinner} from 'react-bootstrap';
-import './SearchControl.css';
 
 const SearchControl: React.FC = () => {
   const dispatch = useDispatch<any>();
@@ -64,9 +63,8 @@ const SearchControl: React.FC = () => {
             Найти
           </Button>
         </Stack>
-        <div className="content_container">
-          {preloader ? <Spinner animation="border" className="center-block"/> :
-            <Outlet/>}
+        <div className={`py-5 ${preloader ? 'd-flex justify-content-center align-items-center' : ''}`}>
+          {preloader ? <Spinner animation="border" className="center-block"/> : <Outlet/>}
         </div>
       </Stack>
     </Container>

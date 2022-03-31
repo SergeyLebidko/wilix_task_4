@@ -1,16 +1,18 @@
 @keyframes rise {
     from {
         opacity: 0;
+        top: -2em;
     }
 
     to {
         opacity: 1;
+        top: 0;
     }
 }
 
 .content {
-    overflow: hidden;
+    position: relative;
     animation: rise;
-    animation-duration: 600ms;
+    animation-duration: 1200ms;
     animation-fill-mode: both;
 }
