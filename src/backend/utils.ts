@@ -7,7 +7,7 @@ export function backend(query: string): Promise<ParseResult> {
     // Имитируем сетевую задержку
     setTimeout(() => {
       // Временный код-заглушка, возвращающий фиктивные результаты
-      const result = {
+      const result: ParseResult = {
         type: ResultType.Error,
         rawQuery: query,
         normalizeQuery: null,
@@ -18,7 +18,7 @@ export function backend(query: string): Promise<ParseResult> {
       if (query === 'phone') {
         result.type = ResultType.Phone;
       }
-      if (query === 'nickname') {
+      if (query === 'nick') {
         result.type = ResultType.Nick;
       }
       if (query === 'familyname') {
@@ -28,6 +28,9 @@ export function backend(query: string): Promise<ParseResult> {
         result.type = ResultType.IPAddress;
       }
 
+      if (result.type !== ResultType.Error) {
+        result.normalizeQuery = query;
+      }
       resolve(result);
     }, BACKEND_TIMEOUT);
   });
