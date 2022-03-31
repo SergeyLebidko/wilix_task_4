@@ -9,7 +9,7 @@ import {useDispatch, useSelector} from 'react-redux';
 import {resultAction} from '../../store/actionCreators';
 import {preloaderSelector} from '../../store/selectors';
 import {Spinner} from 'react-bootstrap';
-import './SearchContainer.css';
+import './SearchControl.css';
 
 const SearchControl: React.FC = () => {
   const dispatch = useDispatch<any>();
