@@ -18,14 +18,13 @@ const SearchControl: React.FC = () => {
   const [parsEnabled, setParsEnabled] = useState<boolean>(false);
   const inputRef = useRef<HTMLInputElement>(null);
 
-
   const startParse = (): void => {
     if (inputRef.current !== null) {
       dispatch(resultAction(inputRef.current.value));
     }
   };
 
-  // Делаем кнопку поиска доступной только если есть какие-то символы в поле воода
+  // Посик доступен только если есть какие-то символы в поле воода
   const searchTextChangeHandler = (event: React.ChangeEvent): void => {
     setParsEnabled(!!(event.target as HTMLInputElement).value);
   };

@@ -1,4 +1,4 @@
-import {ResultType} from './utils';
+import {ResultType} from './backend/types';
 
 export const ERROR_URL = 'error';
 export const POST_URL = 'post';

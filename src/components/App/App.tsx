@@ -17,7 +17,7 @@ import {
   POST_URL,
 } from '../../settings';
 import Error from '../result_components/Error/Error';
-import {ResultType} from '../../utils';
+import {ResultType} from '../../backend/types';
 
 const App: React.FC = () => {
   const navigate = useNavigate();
@@ -38,7 +38,7 @@ const App: React.FC = () => {
 
     // Если результат выполнения запроса на "бэк" не содержит ошибок, то в нем обязательно будет нормализованный текст
     navigate(`${PATH_SELECTOR[result.type]}?q=${encodeURI(result.normalizeQuery as string)}`);
-  }, [result]);
+  }, [result, navigate]);
 
   return (
     <Routes>

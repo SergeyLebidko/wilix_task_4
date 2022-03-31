@@ -1,15 +1,6 @@
-import {backend, ParseResult} from '../utils';
+import {backend} from '../backend/utils';
 import {Dispatch} from 'redux';
-
-export type ResultActionType = {
-  type: 'set_result',
-  payload: ParseResult
-}
-
-export type PreloaderActionType = {
-  type: 'set_preloader',
-  payload: boolean
-}
+import {PreloaderActionType} from './types';
 
 export const resultAction = (query: string) => async (dispatch: Dispatch) => {
   // Показываем пользователю прелоадер перед "отправкой" данных на бэкенд

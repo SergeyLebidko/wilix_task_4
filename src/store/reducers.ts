@@ -1,5 +1,6 @@
-import {ParseResult} from '../utils';
-import {PreloaderActionType, ResultActionType} from './actionCreators';
+
+import {ParseResult} from '../backend/types';
+import {PreloaderActionType, ResultActionType} from './types';
 
 export function resultReducer(state: ParseResult | null = null, action: ResultActionType): ParseResult | null {
   switch (action.type) {
