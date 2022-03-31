@@ -2,7 +2,7 @@ export enum ResultType {
   Error,
   Post,
   Phone,
-  NickName,
+  Nick,
   FamilyName,
   IPAddress
 }
@@ -31,7 +31,7 @@ export function backend(query: string): Promise<ParseResult> {
         result.type = ResultType.Phone;
       }
       if (query === 'nickname') {
-        result.type = ResultType.NickName;
+        result.type = ResultType.Nick;
       }
       if (query === 'familyname') {
         result.type = ResultType.FamilyName;
