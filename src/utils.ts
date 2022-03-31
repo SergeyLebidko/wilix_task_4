@@ -1,3 +1,5 @@
+import {BACKEND_TIMEOUT} from './settings';
+
 // Проверки ниже подавлены специально, так как WebStorm по какой-то неизвестной
 // причине считал, что перечисление не используется
 export enum ResultType {
@@ -49,6 +51,6 @@ export function backend(query: string): Promise<ParseResult> {
       }
 
       resolve(result);
-    }, 1500);
+    }, BACKEND_TIMEOUT);
   });
 }

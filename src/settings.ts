@@ -15,3 +15,6 @@ export const PATH_SELECTOR: any = {
   [ResultType.FamilyName]: FAMILY_NAME_URL,
   [ResultType.IPAddress]: IP_ADDRESS_URL,
 };
+
+// Задержка бэкенда
+export const BACKEND_TIMEOUT = 1500;
