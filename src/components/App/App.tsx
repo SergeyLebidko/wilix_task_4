@@ -17,7 +17,6 @@ import {
   POST_URL,
 } from '../../settings';
 import Error from '../result_components/Error/Error';
-import {ResultType} from '../../backend/types';
 
 const App: React.FC = () => {
   const navigate = useNavigate();
@@ -30,14 +29,8 @@ const App: React.FC = () => {
       return;
     }
 
-    // Ошибку обрабатываем отдельно, так как в случае ошибки не ожидаем от "бэкенда" нормализованного текста
-    if (result.type === ResultType.Error) {
-      navigate(`${ERROR_URL}?q=${encodeURI(result.rawQuery)}`);
-      return;
-    }
-
-    // Если результат выполнения запроса на "бэк" не содержит ошибок, то в нем обязательно будет нормализованный текст
-    navigate(`${PATH_SELECTOR[result.type]}?q=${encodeURI(result.normalizeQuery as string)}`);
+    // В зависимости от типа ответа от "бэкенда" - переводим пользователя по нужному адресу
+    navigate(`${PATH_SELECTOR[result.type]}?q=${encodeURI(result.query)}`);
   }, [result, navigate]);
 
   return (

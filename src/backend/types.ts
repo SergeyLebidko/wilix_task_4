@@ -17,6 +17,5 @@ export enum ResultType {
 
 export type ParseResult = {
   type: ResultType,
-  rawQuery: string,
-  normalizeQuery: string | null
+  query: string
 };

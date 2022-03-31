@@ -9,8 +9,7 @@ export function backend(query: string): Promise<ParseResult> {
       // Временный код-заглушка, возвращающий фиктивные результаты
       const result: ParseResult = {
         type: ResultType.Error,
-        rawQuery: query,
-        normalizeQuery: null,
+        query: query,
       };
       if (query === 'post') {
         result.type = ResultType.Post;
@@ -28,9 +27,6 @@ export function backend(query: string): Promise<ParseResult> {
         result.type = ResultType.IPAddress;
       }
 
-      if (result.type !== ResultType.Error) {
-        result.normalizeQuery = query;
-      }
       resolve(result);
     }, BACKEND_TIMEOUT);
   });
