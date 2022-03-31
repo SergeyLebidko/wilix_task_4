@@ -1,4 +1,4 @@
-import React, {useRef, useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import Stack from 'react-bootstrap/Stack';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
@@ -17,6 +17,11 @@ const SearchControl: React.FC = () => {
 
   const [parsEnabled, setParsEnabled] = useState<boolean>(false);
   const inputRef = useRef<HTMLInputElement>(null);
+
+  // При монтировании ставим фокус на поле ввода
+  useEffect(() => {
+    if (inputRef.current !== null) inputRef.current.focus();
+  }, []);
 
   const startParse = (): void => {
     if (inputRef.current !== null) {
@@ -60,7 +65,8 @@ const SearchControl: React.FC = () => {
           </Button>
         </Stack>
         <div className="content_container">
-          {preloader ? <Spinner animation="border" className="center-block"/> : <Outlet/>}
+          {preloader ? <Spinner animation="border" className="center-block"/> :
+            <Outlet/>}
         </div>
       </Stack>
     </Container>
