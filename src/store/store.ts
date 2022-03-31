@@ -4,7 +4,7 @@ import {composeWithDevTools} from 'redux-devtools-extension';
 import thunk from 'redux-thunk';
 import {ParseResult} from '../utils';
 
-type RootState = {
+export type RootState = {
   preloader: boolean,
   result: ParseResult | null
 };
