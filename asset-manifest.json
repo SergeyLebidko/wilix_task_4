@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/wilix_task_4/static/css/main.3a9d4787.css",
-    "main.js": "/wilix_task_4/static/js/main.95d74733.js",
+    "main.css": "/wilix_task_4/static/css/main.84d37b40.css",
+    "main.js": "/wilix_task_4/static/js/main.b11fbbac.js",
     "index.html": "/wilix_task_4/index.html",
-    "main.3a9d4787.css.map": "/wilix_task_4/static/css/main.3a9d4787.css.map",
-    "main.95d74733.js.map": "/wilix_task_4/static/js/main.95d74733.js.map"
+    "main.84d37b40.css.map": "/wilix_task_4/static/css/main.84d37b40.css.map",
+    "main.b11fbbac.js.map": "/wilix_task_4/static/js/main.b11fbbac.js.map"
   },
   "entrypoints": [
-    "static/css/main.3a9d4787.css",
-    "static/js/main.95d74733.js"
+    "static/css/main.84d37b40.css",
+    "static/js/main.b11fbbac.js"
   ]
 }
