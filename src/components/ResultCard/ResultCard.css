@@ -17,3 +17,8 @@
     animation-duration: 1200ms;
     animation-fill-mode: both;
 }
+
+.error {
+    background-color: coral;
+    color: white;
+}

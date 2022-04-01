@@ -11,7 +11,6 @@ import {
   PHONE_URL,
   POST_URL,
 } from '../../settings';
-import Error from '../result_components/Error/Error';
 import ResultCard from '../ResultCard/ResultCard';
 
 const App: React.FC = () => {
@@ -32,7 +31,7 @@ const App: React.FC = () => {
   return (
     <Routes>
       <Route path="/" element={<SearchControl/>}>
-        <Route path={ERROR_URL} element={<Error/>}/>
+        <Route path={ERROR_URL} element={<ResultCard headerText="Ошибка" error/>}/>
         <Route path={POST_URL} element={<ResultCard headerText="Адрес электронной почты"/>}/>
         <Route path={PHONE_URL} element={<ResultCard headerText="Номер телефона"/>}/>
         <Route path={NICK_URL} element={<ResultCard headerText="Никнэйм"/>}/>
