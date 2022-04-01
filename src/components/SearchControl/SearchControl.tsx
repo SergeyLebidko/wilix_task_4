@@ -7,24 +7,32 @@ import {Spinner} from 'react-bootstrap';
 import {Outlet} from 'react-router-dom';
 import WilixHeader from '../WilixHeader/WilixHeader';
 import {useDispatch, useSelector} from 'react-redux';
-import {resultAction} from '../../store/actionCreators';
-import {preloaderSelector} from '../../store/selectors';
+import {setResultAction} from '../../store/actionCreators';
+import {preloaderSelector, resultSelector} from '../../store/selectors';
 
 const SearchControl: React.FC = () => {
   const dispatch = useDispatch<any>();
   const preloader = useSelector(preloaderSelector);
+  const result = useSelector(resultSelector);
 
   const [parsEnabled, setParsEnabled] = useState<boolean>(false);
   const inputRef = useRef<HTMLInputElement>(null);
 
-  // При монтировании ставим фокус на поле ввода
+  // При монтировании ставим фокус на поле ввода.
+  // Если результат парсинга отсутсвует в хранилище - очищаем поле ввода
   useEffect(() => {
-    if (inputRef.current !== null) inputRef.current.focus();
-  }, []);
+    if (inputRef.current !== null) {
+      inputRef.current.focus();
+      if (result === null) {
+        inputRef.current.value = '';
+        setParsEnabled(false);
+      }
+    }
+  }, [result]);
 
   const startParse = (): void => {
     if (inputRef.current !== null) {
-      dispatch(resultAction(inputRef.current.value));
+      dispatch(setResultAction(inputRef.current.value));
     }
   };
 

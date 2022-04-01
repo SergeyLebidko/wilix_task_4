@@ -5,10 +5,16 @@ export type RootState = {
   result: ParseResult | null
 };
 
-export type ResultActionType = {
+export type SetResultActionType = {
   type: 'set_result',
   payload: ParseResult
 };
+
+export type ClearResultActionType = {
+  type: 'clear_result'
+}
+
+export type ResultActionsType = SetResultActionType | ClearResultActionType;
 
 export type PreloaderActionType = {
   type: 'set_preloader',

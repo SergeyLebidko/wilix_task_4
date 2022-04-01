@@ -19,6 +19,6 @@
 }
 
 .error {
-    background-color: coral;
+    background-color: coral!important;
     color: white;
 }

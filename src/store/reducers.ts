@@ -1,11 +1,13 @@
-
 import {ParseResult} from '../backend/types';
-import {PreloaderActionType, ResultActionType} from './types';
+import {PreloaderActionType, ResultActionsType} from './types';
 
-export function resultReducer(state: ParseResult | null = null, action: ResultActionType): ParseResult | null {
+export function resultReducer(state: ParseResult | null = null, action: ResultActionsType): ParseResult | null {
   switch (action.type) {
     case 'set_result': {
       return action.payload;
+    }
+    case 'clear_result': {
+      return null;
     }
     default: {
       return state;
