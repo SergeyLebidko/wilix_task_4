@@ -3,12 +3,12 @@ import Stack from 'react-bootstrap/Stack';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
+import {Spinner} from 'react-bootstrap';
 import {Outlet} from 'react-router-dom';
 import WilixHeader from '../WilixHeader/WilixHeader';
 import {useDispatch, useSelector} from 'react-redux';
 import {resultAction} from '../../store/actionCreators';
 import {preloaderSelector} from '../../store/selectors';
-import {Spinner} from 'react-bootstrap';
 
 const SearchControl: React.FC = () => {
   const dispatch = useDispatch<any>();

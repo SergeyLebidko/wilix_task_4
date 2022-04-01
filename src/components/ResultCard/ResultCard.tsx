@@ -4,6 +4,7 @@ import Card from 'react-bootstrap/Card';
 import {useSelector} from 'react-redux';
 import {resultSelector} from '../../store/selectors';
 import {CARD_PLACEHOLDER} from '../../settings';
+import './ResultCard.css';
 
 type ResultCardProps = {
   headerText: string
@@ -12,7 +13,7 @@ type ResultCardProps = {
 const ResultCard: React.FC<ResultCardProps> = ({headerText}) => {
   const result = useSelector(resultSelector);
   return (
-    <Card style={{width: '100%'}}>
+    <Card className="rise_card">
       <Card.Header>{headerText}</Card.Header>
       <Card.Body>
         <Card.Title>{result?.query}</Card.Title>

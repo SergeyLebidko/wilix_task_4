@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../../style/common.css';
+import '../../ResultCard/ResultCard.css';
 
 const Error: React.FC = () => {
   return (

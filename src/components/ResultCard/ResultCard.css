@@ -10,7 +10,8 @@
     }
 }
 
-.content {
+.rise_card {
+    width: 100%;
     position: relative;
     animation: rise;
     animation-duration: 1200ms;
