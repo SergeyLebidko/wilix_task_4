@@ -7,7 +7,7 @@ import {
   ERROR_URL,
   FAMILY_NAME_URL,
   IP_ADDRESS_URL,
-  NICK_URL, PATH_SELECTOR,
+  NICK_URL, URL_SELECTOR,
   PHONE_URL,
   POST_URL,
 } from '../../settings';
@@ -25,7 +25,7 @@ const App: React.FC = () => {
     }
 
     // В зависимости от типа ответа от "бэкенда" - переводим пользователя по нужному адресу
-    navigate(`${PATH_SELECTOR[result.type]}?q=${encodeURI(result.query)}`);
+    navigate(`${URL_SELECTOR[result.type]}?q=${encodeURI(result.query)}`);
   }, [result, navigate]);
 
   return (

@@ -7,7 +7,7 @@ export const NICK_URL = 'nick';
 export const FAMILY_NAME_URL = 'family_name';
 export const IP_ADDRESS_URL = 'ip_address';
 
-export const PATH_SELECTOR: any = {
+export const URL_SELECTOR: any = {
   [ResultType.Error]: ERROR_URL,
   [ResultType.Post]: POST_URL,
   [ResultType.Phone]: PHONE_URL,
@@ -16,7 +16,7 @@ export const PATH_SELECTOR: any = {
   [ResultType.IPAddress]: IP_ADDRESS_URL,
 };
 
-// Задержка бэкенда
+// Задержка "бэкенда"
 export const BACKEND_TIMEOUT = 1500;
 
 // Регулярное выражение для проверки ника
