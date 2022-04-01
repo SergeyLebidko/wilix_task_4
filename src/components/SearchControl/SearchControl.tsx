@@ -18,7 +18,7 @@ const SearchControl: React.FC = () => {
   const [parsEnabled, setParsEnabled] = useState<boolean>(false);
   const inputRef = useRef<HTMLInputElement>(null);
 
-  // При монтировании ставим фокус на поле ввода.
+  // Ставим фокус на поле ввода.
   // Если результат парсинга отсутсвует в хранилище - очищаем поле ввода
   useEffect(() => {
     if (inputRef.current !== null) {
